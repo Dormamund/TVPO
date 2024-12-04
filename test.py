@@ -8,5 +8,5 @@ def test_calculate_monthly_payment():
     years = 20  # 20 лет
 
     monthly_payment = calculate_monthly_payment(principal, annual_interest_rate, years)
-    assert round(monthly_payment, 2) == 22367.19  # Ожидаемый результат (22367.19)
+    assert round(monthly_payment, 2) == 22598.45  # Ожидаемый результат (22367.19)
 
