@@ -40,5 +40,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print("Hello Batya")
+    print("Hello Batya2")
     main()
