@@ -30,24 +30,24 @@ jobs:
     - name: Run tests with pytest
       run: |
         pytest
-deploy:
-  needs: test
-  runs-on: ubuntu-latest
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
 
-  steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-  - name: Configure Git
-    run: |
-      git config —global user.name "github-actions[bot]"
-      git config —global user.email "github-actions[bot]@users.noreply.github.com"
-  - name: Push changes to main branch
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    run: |
-      echo "Pushing changes to 'main' branch..."
-      git checkout main
-      git add .
-      git commit -m "Tested and deployed changes [CI/CD]" || echo "No changes to commit"
-      git push origin main
+    - name: Configure Git
+      run: |
+        git config —global user.name "github-actions[bot]"
+        git config —global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Push changes to main branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "Pushing changes to 'main' branch..."
+        git checkout main
+        git add .
+        git commit -m "Tested and deployed changes [CI/CD]" || echo "No changes to commit"
+        git push origin main
