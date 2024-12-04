@@ -9,4 +9,5 @@ def test_calculate_monthly_payment():
 
     monthly_payment = calculate_monthly_payment(principal, annual_interest_rate, years)
     assert round(monthly_payment, 2) == 50000  # Ожидаемый результат (22367.19)
-
+def test_dummy():
+    pass
